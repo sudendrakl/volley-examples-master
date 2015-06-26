@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.activeandroid.ActiveAndroid;
 import com.android.volley.Request;
@@ -121,7 +122,7 @@ public class ExamplesListFragment extends Fragment implements OnListItemClickLis
             );
 
             rq.setTag(TAG);
-            rq.setShouldCache(false);
+            rq.setShouldCache(true);
             requestQueue.add(rq);
         }
 
@@ -137,15 +138,14 @@ public class ExamplesListFragment extends Fragment implements OnListItemClickLis
                 for (i = 0; i < list.size(); i++) {
                     ImageData item = list.get(i);
                     item.save();
-                    if(i%100 == 0) {
+                    if (i % 100 == 0) {
                         ActiveAndroid.setTransactionSuccessful();
                         ActiveAndroid.endTransaction();
                         ActiveAndroid.beginTransaction();
                     }
                 }
-                    ActiveAndroid.setTransactionSuccessful();
-            }
-            finally {
+                ActiveAndroid.setTransactionSuccessful();
+            } finally {
                 ActiveAndroid.endTransaction();
             }
 
@@ -153,8 +153,9 @@ public class ExamplesListFragment extends Fragment implements OnListItemClickLis
             imagesAdapter.notifyDataSetChanged();
             preferenceManager.setDataSynced();
             progressDialog.dismiss();
+        } else {
+            Toast.makeText(getActivity(), "Please check n/w connection", Toast.LENGTH_LONG).show();
         }
-
     }
 
     public static class AttachFragmentEvent {
