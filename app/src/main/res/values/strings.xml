@@ -14,4 +14,10 @@
     <string name="try_again">Try again?</string>
     <string name="temperature_in_mexico_city">Temperature in Mexico City</string>
     <string name="demo_map_image">Demo map image.</string>
+    <string name="font_size_menu">Font size</string>
+    <string-array name="font_sizes">
+        <item>Large</item>
+        <item>Medium</item>
+        <item>Small</item>
+    </string-array>
 </resources>

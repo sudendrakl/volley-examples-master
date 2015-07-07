@@ -34,4 +34,12 @@ public final class PreferenceManager {
         mSharedPreferences.edit().putBoolean(DATA_IS_SYNCED, true).apply();
     }
 
+    public int getFontSize(){
+        return mSharedPreferences.getInt(AppConstants.Theme.FONT_SIZE, AppConstants.Theme.FontMedium);
+    }
+
+    public void setFontSize(int size){
+        mSharedPreferences.edit().putInt(AppConstants.Theme.FONT_SIZE, size).apply();
+    }
+
 }

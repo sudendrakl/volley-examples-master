@@ -5,6 +5,7 @@ import android.content.Context;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.droid.imagelist.MainActivity;
 import com.droid.imagelist.fragment.ExamplesListFragment;
 import com.droid.imagelist.fragment.NetworkImageFragment;
 import com.droid.imagelist.util.LruBitmapCache;
@@ -19,7 +20,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-@Module(injects = { NetworkImageFragment.class, ExamplesListFragment.class},
+@Module(injects = { NetworkImageFragment.class, ExamplesListFragment.class, MainActivity.class},
         library = true, complete = false)
 public class RestModule {
 

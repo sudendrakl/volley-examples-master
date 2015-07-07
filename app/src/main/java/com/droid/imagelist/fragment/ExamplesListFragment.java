@@ -38,15 +38,15 @@ import javax.inject.Inject;
 
 public class ExamplesListFragment extends Fragment implements OnListItemClickListener {
     public static final String TAG = ExamplesListFragment.class.getSimpleName();
-    private List<ImageData> responseList = new ArrayList<>();
-    private Dialog progressDialog;
     ImagesAdapter imagesAdapter;
     @Inject
     RequestQueue requestQueue;
     @Inject
     ImageLoader imageLoader;
-@Inject
+    @Inject
     PreferenceManager preferenceManager;
+    private List<ImageData> responseList = new ArrayList<>();
+    private Dialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
@@ -69,6 +69,7 @@ public class ExamplesListFragment extends Fragment implements OnListItemClickLis
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         ((VolleyApp) activity.getApplication()).inject(this);
+        setHasOptionsMenu(true);
     }
 
     @Override

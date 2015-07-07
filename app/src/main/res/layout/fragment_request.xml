@@ -20,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/temperature_in_mexico_city"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="?android:textColorTertiary" />
+            android:textColor="?android:textColorTertiary"
+            android:textSize="?attr/font_large" />
 
         <TextView
             android:id="@+id/temperatureTextView"
